@@ -119,6 +119,14 @@
     .row h3{margin-bottom:8px}
   }
 
+  /* ---------- callout ---------- */
+  .callout{
+    margin:28px 0 0;padding:20px 24px;background:var(--signal-soft);
+    border-left:2px solid var(--signal);font-size:16px;line-height:1.55;color:var(--ink);
+  }
+  .callout a{color:var(--signal);text-decoration:underline;text-underline-offset:3px;font-weight:500}
+  .callout a:hover{text-decoration-thickness:2px}
+
   /* ---------- dark band (FDE) ---------- */
   .band{background:var(--ink);color:var(--on-dark);border-top:none}
   .band h2,.band h3{color:#fff}
@@ -183,7 +191,11 @@
   .contact .lede{margin-top:26px;font-size:18.5px;line-height:1.6;color:var(--on-dark-mute);max-width:56ch}
   .contact .btn-primary{background:var(--paper);color:var(--ink)}
   .contact .btn-primary:hover{background:var(--signal);color:#fff}
-  .contact .cta{margin-top:34px}
+  .contact .btn-ghost{border-color:var(--rule-dark);color:#fff}
+  .contact .btn-ghost:hover{border-color:var(--paper);background:var(--paper);color:var(--ink)}
+  .contact .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn-num{font-variant-numeric:tabular-nums;opacity:.62;font-weight:400}
+  @media(max-width:520px){.btn-num{display:none}}
   .cmeta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:76px;border-top:1px solid var(--rule-dark)}
   .cmeta div{padding:22px 22px 0 0;border-right:1px solid var(--rule-dark)}
   .cmeta div:last-child{border-right:none}
@@ -284,7 +296,13 @@
         <h3>Tools, actions &amp; guardrails</h3>
         <p>Safe connections to APIs, databases and applications, with permissions, policy checks and failure handling that make agent actions dependable and auditable.</p>
       </div>
+      <div class="row">
+        <div class="num">07</div>
+        <h3>Generative Engine Optimization</h3>
+        <p>Your customers increasingly ask an assistant instead of a search box. GEO is how your brand, products and documentation get retrieved, represented and cited inside AI-generated answers — structured and machine-readable content, authoritative sourcing, and tracking of the share of answers you actually appear in.</p>
+      </div>
     </div>
+    <p class="callout">Want your website optimised for GEO — so AI assistants find, understand and cite you? <a href="#contact">Talk to us about a GEO audit</a>.</p>
   </div>
 </section>
 
@@ -519,6 +537,10 @@
     <div class="cta">
       <a class="btn btn-primary" href="mailto:info@matrion.in">Email us
         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="tel:+919845576009">Call us
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.8 5L7.3 10.6a11 11 0 0 0 5 5l1.6-2.4 5 1.8V18a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+        <span class="btn-num">+91 98455 76009</span>
       </a>
     </div>
     <div class="cmeta">
