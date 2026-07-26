@@ -86,21 +86,11 @@
   @media(max-width:1080px){.navlinks{display:none}}
 
   /* ---------- hero ---------- */
-  .hero{padding:110px 0 0;border-top:none}
+  .hero{padding:110px 0 96px;border-top:none}
   .hero h1{font-size:clamp(42px,6.4vw,78px);max-width:1100px;margin:26px 0 0;font-weight:300;letter-spacing:-.025em}
   .hero h1 em{font-style:italic;color:var(--signal)}
   .hero .lede{margin-top:28px;font-size:19px;line-height:1.6;max-width:850px;color:var(--ink-soft)}
   .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
-  .spec{
-    margin-top:84px;border-top:1px solid var(--ink);
-    display:grid;grid-template-columns:repeat(4,1fr);
-  }
-  .spec div{padding:22px 22px 26px 0;border-right:1px solid var(--rule)}
-  .spec div:last-child{border-right:none}
-  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:9px}
-  .spec dd{margin:0;font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.25}
-  @media(max-width:820px){.spec{grid-template-columns:1fr 1fr}.spec div{padding-right:18px}.spec div:nth-child(2){border-right:none}}
-  @media(max-width:480px){.spec{grid-template-columns:1fr}.spec div{border-right:none;border-bottom:1px solid var(--rule)}}
 
   /* ---------- capability index (replaces cards) ---------- */
   .index{border-top:1px solid var(--ink)}
@@ -249,12 +239,6 @@
       </a>
       <a class="btn btn-ghost" href="#embedded">How we deliver</a>
     </div>
-    <dl class="spec">
-      <div><dt>Services</dt><dd>Agentic &amp; Managed Services</dd></div>
-      <div><dt>Delivery model</dt><dd>Embedded engineers</dd></div>
-      <div><dt>Shipped as</dt><dd>Production code</dd></div>
-      <div><dt>Measured by</dt><dd>Evaluations &amp; SLAs</dd></div>
-    </dl>
   </div>
 </section>
 
