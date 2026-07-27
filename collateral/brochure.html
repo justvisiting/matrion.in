@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Matrion — Agentic AI Systems · Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --paper2:#F3F1EB; --ink:#12151A; --ink-soft:#3A4048;
+    --ink-mute:#6E757F; --rule:#DDD9D0; --signal:#1F3DE0;
+    --on-dark:#F2EFE9; --on-mute:#9AA0AA; --rule-dark:rgba(255,255,255,.18);
+    --serif:'Newsreader',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#cbc7bd;font-family:var(--sans);color:var(--ink-soft);
+       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .book{display:flex;flex-direction:column;align-items:center;gap:22px;padding:26px 14px}
+  .page{position:relative;width:210mm;height:297mm;overflow:hidden;background:var(--paper);
+        box-shadow:0 14px 40px rgba(0,0,0,.3)}
+  .pad{position:absolute;inset:0;padding:16mm 15mm;display:flex;flex-direction:column}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;color:var(--ink);letter-spacing:-.015em;line-height:1.1}
+  .mono{font-family:var(--mono);font-size:8pt;letter-spacing:.11em;text-transform:uppercase;font-weight:500}
+  .idx{color:var(--ink-mute)} .idx b{color:var(--signal);font-weight:500}
+  .rule{height:.6pt;background:var(--rule);border:0;margin:0}
+  .rule-dk{height:.8pt;background:var(--ink);border:0;margin:0}
+
+  /* ---- page 1 ---- */
+  .masthead{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:5mm;border-bottom:.8pt solid var(--ink)}
+  .brand{display:flex;align-items:center;gap:3mm}
+  .brand svg{width:9mm;height:9mm}
+  .brand .nm{font-family:var(--serif);font-size:20pt;color:var(--ink);letter-spacing:-.02em}
+  .masthead .tag{text-align:right;color:var(--ink-mute);line-height:1.7}
+
+  .hero{padding:10mm 0 0}
+  .hero h1{font-size:27pt;font-weight:300;letter-spacing:-.025em;max-width:15ch;line-height:1.07}
+  .hero h1 em{font-style:italic;color:var(--signal)}
+  .hero p{margin:5mm 0 0;font-size:10pt;line-height:1.6;max-width:58ch;color:var(--ink-soft)}
+
+  .specrow{display:grid;grid-template-columns:repeat(4,1fr);border-top:.8pt solid var(--ink);margin-top:8mm}
+  .specrow div{padding:3.5mm 3mm 0 0;border-right:.6pt solid var(--rule)}
+  .specrow div:last-child{border-right:0}
+  .specrow dt{font-family:var(--mono);font-size:7pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:1.5mm}
+  .specrow dd{margin:0;font-family:var(--serif);font-size:11pt;color:var(--ink);line-height:1.25}
+
+  .sec{margin-top:8mm}
+  .sec > .lbl{margin-bottom:3mm}
+  .sec h2{font-size:17pt;margin-bottom:2.5mm}
+  .sec .sub{font-size:9.5pt;line-height:1.55;color:var(--ink-soft);max-width:64ch}
+
+  .caps{display:grid;grid-template-columns:1fr 1fr;gap:0 8mm;margin-top:5mm;border-top:.8pt solid var(--ink)}
+  .cap{padding:2.8mm 0;border-bottom:.6pt solid var(--rule)}
+  .cap .n{font-family:var(--mono);font-size:7pt;color:var(--signal);letter-spacing:.08em}
+  .cap h3{font-size:11.5pt;margin:1.2mm 0 1mm}
+  .cap p{margin:0;font-size:8.2pt;line-height:1.45;color:var(--ink-soft)}
+
+  .stat{margin-top:auto;border-top:.8pt solid var(--ink);padding-top:4mm;display:grid;grid-template-columns:auto 1fr;gap:7mm;align-items:baseline}
+  .stat .big{font-family:var(--serif);font-size:26pt;color:var(--signal);line-height:1}
+  .stat p{margin:0;font-size:9pt;line-height:1.5;color:var(--ink-soft)}
+  .stat .src{font-family:var(--mono);font-size:7pt;color:var(--ink-mute);margin-top:1.5mm;letter-spacing:.05em}
+
+  .foot{margin-top:4mm;display:flex;justify-content:space-between;font-family:var(--mono);font-size:7pt;
+        letter-spacing:.09em;text-transform:uppercase;color:var(--ink-mute)}
+
+  /* ---- page 2 ---- */
+  .band{background:var(--ink);color:var(--on-dark);margin:-16mm -15mm 0;padding:14mm 15mm 12mm}
+  .band h2{color:#fff;font-size:19pt;max-width:22ch}
+  .band .lead{margin:5mm 0 0;font-size:9.5pt;line-height:1.6;color:var(--on-mute);max-width:62ch}
+  .fde{display:grid;grid-template-columns:1fr 1fr;gap:0 8mm;margin-top:6mm;border-top:.6pt solid var(--rule-dark)}
+  .fde div{padding:3mm 0;border-bottom:.6pt solid var(--rule-dark)}
+  .fde .k{font-family:var(--mono);font-size:7pt;color:var(--on-mute)}
+  .fde h4{margin:1mm 0 1mm;font-family:var(--sans);font-size:9.5pt;font-weight:600;color:#fff}
+  .fde p{margin:0;font-size:8.3pt;line-height:1.45;color:var(--on-mute)}
+
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0 5mm;margin-top:4mm;border-top:.8pt solid var(--ink)}
+  .ph{padding:3mm 0}
+  .ph .w{font-family:var(--mono);font-size:7pt;color:var(--signal);letter-spacing:.1em;text-transform:uppercase}
+  .ph h3{font-size:10.5pt;margin:1.5mm 0 1mm}
+  .ph p{margin:0;font-size:8.2pt;line-height:1.45;color:var(--ink-soft)}
+
+  .gov{margin-top:4mm;border-top:.8pt solid var(--ink)}
+  .gv{display:grid;grid-template-columns:12mm 52mm 1fr;gap:5mm;padding:2.8mm 0;border-bottom:.6pt solid var(--rule);align-items:baseline}
+  .gv .t{font-family:var(--mono);font-size:7pt;color:var(--signal)}
+  .gv .h{font-family:var(--serif);font-size:10.5pt;color:var(--ink)}
+  .gv p{margin:0;font-size:8.2pt;line-height:1.45;color:var(--ink-soft)}
+
+  .stk{margin-top:4mm;border-top:.8pt solid var(--ink)}
+  .sk{display:grid;grid-template-columns:38mm 1fr;gap:5mm;padding:2.2mm 0;border-bottom:.6pt solid var(--rule);align-items:baseline}
+  .sk dt{font-family:var(--serif);font-size:9.5pt;color:var(--ink)}
+  .sk dd{margin:0;font-family:var(--mono);font-size:7.2pt;line-height:1.6;color:var(--ink-soft)}
+
+  .geo-note{margin-top:auto;background:var(--paper2);border-left:2pt solid var(--signal);padding:6mm 7mm}
+  .geo-note p{margin:0;font-size:9pt;line-height:1.55;color:var(--ink-soft);max-width:70ch}
+
+  .cta{margin-top:auto;background:var(--ink);color:#fff;margin-left:-15mm;margin-right:-15mm;
+       padding:8mm 15mm;display:grid;grid-template-columns:1fr auto;gap:8mm;align-items:center}
+  .cta h2{color:#fff;font-size:17pt;max-width:18ch;font-weight:300}
+  .cta .contacts{display:grid;grid-template-columns:auto auto;gap:3mm 8mm;text-align:right}
+  .cta .ct{font-family:var(--mono);font-size:7pt;color:var(--on-mute);letter-spacing:.1em;text-transform:uppercase}
+  .cta .cv{font-size:10pt;color:#fff;font-weight:600;margin-top:.8mm}
+
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:#fff}
+    .book{display:block;gap:0;padding:0}
+    .page{box-shadow:none;margin:0;break-after:page}
+    .page:last-child{break-after:auto}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  }
+</style>
+</head>
+<body>
+<div class="book">
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="masthead">
+      <div class="brand">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#12151A"/>
+          <path d="M7 24V8l9 9 9-9v16" stroke="#F7F5F0" stroke-width="2.4" fill="none" stroke-linecap="square"/></svg>
+        <span class="nm">Matrion</span>
+      </div>
+      <div class="mono tag">Agentic AI systems engineering<br>Consulting · Products · Solutions</div>
+    </div>
+
+    <div class="hero">
+      <h1>Agents that do the work. Not demos that <em>describe it.</em></h1>
+      <p>Matrion designs and builds production-grade agentic AI systems — grounded in your data, connected to your tools, evaluated before they ship, and operated by senior engineers embedded inside your team.</p>
+    </div>
+
+    <dl class="specrow">
+      <div><dt>Core focus</dt><dd>Agentic systems</dd></div>
+      <div><dt>Delivery model</dt><dd>Embedded engineers</dd></div>
+      <div><dt>Shipped as</dt><dd>Production code</dd></div>
+      <div><dt>Measured by</dt><dd>Evaluations</dd></div>
+    </dl>
+
+    <div class="sec">
+      <div class="mono idx lbl"><b>01</b> / What we build</div>
+      <h2>Agents that take real work off your team.</h2>
+      <p class="sub">We go beyond chat interfaces — agents that understand goals, plan work, call tools, collaborate with people and other agents, and complete auditable actions inside your existing operations.</p>
+      <div class="caps">
+        <div class="cap"><div class="n">01</div><h3>Autonomous workflows</h3><p>Goal-driven agents that decompose complex work, coordinate steps and adapt — within clear boundaries and approvals.</p></div>
+        <div class="cap"><div class="n">02</div><h3>Enterprise RAG &amp; grounding</h3><p>Retrieval, citations, permissions and context controls that reduce hallucination and improve decisions.</p></div>
+        <div class="cap"><div class="n">03</div><h3>Human-agent collaboration</h3><p>Approval gates, escalation paths and role-aware experiences that keep people in control where it matters.</p></div>
+        <div class="cap"><div class="n">04</div><h3>Multi-agent orchestration</h3><p>Specialist agents that delegate, share context and coordinate across end-to-end business processes.</p></div>
+        <div class="cap"><div class="n">05</div><h3>Evaluation &amp; observability</h3><p>Traceable decisions, quality evaluations, cost and latency controls, and monitoring from day one.</p></div>
+        <div class="cap"><div class="n">06</div><h3>Tools, actions &amp; guardrails</h3><p>Safe connections to APIs and applications, with policy checks and failure handling that make actions dependable.</p></div>
+        <div class="cap" style="grid-column:1 / -1"><div class="n">07</div><h3>Generative Engine Optimization (GEO)</h3><p>Your customers increasingly ask an assistant instead of a search box. We optimise how your brand, products and documentation are retrieved, represented and cited inside AI-generated answers — and track the share of answers you actually appear in.</p></div>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="big">40%+</div>
+      <div>
+        <p>of agentic AI projects will be cancelled by the end of 2027 — attributed to escalating costs, unclear business value and inadequate risk controls. <b>Model capability is not on that list.</b> These are delivery and governance failures, which is exactly where we work.</p>
+        <div class="src">Source: Gartner, June 2025</div>
+      </div>
+    </div>
+
+    <div class="foot"><span>matrion.in</span><span>Page 1 of 3</span></div>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="band">
+      <div class="mono idx" style="color:#9AA0AA"><b style="color:#fff">02</b> / How we deliver</div>
+      <h2 style="margin-top:3mm">Forward Deployed Engineers — inside your team, not across a contract.</h2>
+      <p class="lead">Building dependable agents requires deep context about your workflows, systems and risk. We embed senior AI engineers directly into your company — in your repos, your data, your roadmap — until the agentic system is live and your team owns it.</p>
+      <div class="fde">
+        <div><div class="k">01</div><h4>Embedded from day one</h4><p>Your stack, your tickets, your rituals — not an external vendor on a status call.</p></div>
+        <div><div class="k">02</div><h4>Ships production code, not decks</h4><p>Agents and evaluations that land in your repository and run against real traffic.</p></div>
+        <div><div class="k">03</div><h4>Weeks to first value</h4><p>A narrow, real use case goes live early while the wider roadmap is still forming.</p></div>
+        <div><div class="k">04</div><h4>Built to hand over</h4><p>Knowledge transfer is the deliverable. Scale us up or down as you need.</p></div>
+      </div>
+    </div>
+
+    <div class="sec" style="margin-top:9mm">
+      <div class="mono idx lbl"><b>03</b> / Engagement</div>
+      <h2>Something real in production inside a month.</h2>
+      <div class="phases">
+        <div class="ph"><div class="w">Week 0</div><h3>Scope and baseline</h3><p>One workflow with a real owner. The evaluation set is built before the agent, so “better” is defined first.</p></div>
+        <div class="ph"><div class="w">Weeks 1–3</div><h3>Thin slice to production</h3><p>The narrowest useful version against real traffic, behind approval gates, with tracing and rollback.</p></div>
+        <div class="ph"><div class="w">Weeks 4–10</div><h3>Harden and widen</h3><p>Coverage expands as evaluations hold. Failure handling and permissions grow with the surface area.</p></div>
+        <div class="ph"><div class="w">Ongoing</div><h3>Operate and hand over</h3><p>Your engineers take ownership with the harness, runbooks and evaluation suite intact.</p></div>
+      </div>
+    </div>
+
+    <div class="geo-note">
+      <div class="mono idx" style="margin-bottom:2.5mm"><b>GEO</b> / Generative Engine Optimization</div>
+      <h2 style="font-size:15pt;margin-bottom:2.5mm">Want your website optimised for GEO?</h2>
+      <p>Your customers increasingly ask an assistant instead of a search box. We audit how your brand, products and
+      documentation are retrieved, represented and cited inside AI-generated answers — then fix the structure, sourcing
+      and machine-readability so you show up. Ask us for a GEO audit.</p>
+    </div>
+
+    <div class="foot"><span>matrion.in</span><span>Page 2 of 3</span></div>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="pad">
+    <div class="sec" style="margin-top:0">
+      <div class="mono idx lbl"><b>04</b> / Outcomes</div>
+      <h2>AI that shows up in the numbers.</h2>
+      <div class="gov">
+        <div class="gv"><div class="t">GROWTH</div><div class="h">Growth from AI in your product</div><p>Agentic capability embedded into your own product surface, so it becomes a reason customers choose you and a reason they stay — not a line item in next year's roadmap.</p></div>
+        <div class="gv"><div class="t">OPS</div><div class="h">Productivity your team feels</div><p>Agents absorb the repetitive operational load — research, triage, reconciliation, documentation — so your people spend their hours on judgment instead of throughput.</p></div>
+        <div class="gv"><div class="t">SPEED</div><div class="h">Speed to market</div><p>Weeks, not quarters. A narrow slice reaches production early, so the business compounds returns while the wider roadmap is still being built.</p></div>
+        <div class="gv"><div class="t">TRUST</div><div class="h">Trust that travels with it</div><p>Traceable decisions, retained evidence and human oversight built in from the first commit — so DPDP, the EU AI Act and ISO/IEC 42001 are satisfied as a by-product of delivery, never a separate programme.</p></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="sec" style="margin-top:8mm">
+      <div class="mono idx lbl"><b>05</b> / Technology</div>
+      <dl class="stk">
+        <div class="sk"><dt>Models</dt><dd>Frontier tier — Claude / GPT / Gemini · Open-weight — Llama, Qwen, DeepSeek, Mistral — for self-hosting and residency · Routed per task</dd></div>
+        <div class="sk"><dt>Agent runtimes</dt><dd>Claude Agent SDK · OpenAI Agents SDK · Microsoft Agent Framework · Google ADK · Purpose-built harnesses</dd></div>
+        <div class="sk"><dt>Interoperability</dt><dd>MCP — agent to tools and data · A2A — agent to agent · Both under the Linux Foundation</dd></div>
+        <div class="sk"><dt>Context engineering</dt><dd>Retrieval (RAG) · Compaction · Tool-result clearing · Long-horizon memory · Permission-aware context</dd></div>
+        <div class="sk"><dt>Evaluation</dt><dd>LangSmith · Braintrust · Langfuse · Arize Phoenix · W&amp;B Weave · OpenTelemetry</dd></div>
+        <div class="sk"><dt>Serving &amp; platform</dt><dd>vLLM · AWS Bedrock · Google Vertex AI · Azure AI Foundry · Prompt caching and batch</dd></div>
+      </dl>
+    </div>
+
+    <div class="cta">
+      <h2>Let's put agents to work on your hardest workflow.</h2>
+      <div class="contacts">
+        <div><div class="ct">Email</div><div class="cv">info@matrion.in</div></div>
+        <div><div class="ct">Phone</div><div class="cv">+91 98455 76009</div></div>
+        <div><div class="ct">Web</div><div class="cv">matrion.in</div></div>
+        <div><div class="ct">Focus</div><div class="cv">Agentic systems</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
