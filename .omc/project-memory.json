@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1785052031635,
+  "lastScanned": 1785215772402,
   "projectRoot": "/Users/hitech/github/matrion.in",
   "techStack": {
     "languages": [],
@@ -25,7 +25,10 @@
     "isMonorepo": false,
     "workspaces": [],
     "mainDirectories": [],
-    "gitBranches": null
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
   },
   "customNotes": [],
   "directoryMap": {
@@ -33,11 +36,21 @@
       "path": "collateral",
       "purpose": null,
       "fileCount": 3,
-      "lastAccessed": 1785052031505,
+      "lastAccessed": 1785215772383,
       "keyFiles": [
         "Matrion-Brochure.pdf",
         "Matrion-Deck.pptx",
         "brochure.html"
+      ]
+    },
+    "tmp_claude_plugins": {
+      "path": "tmp_claude_plugins",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1785215772384,
+      "keyFiles": [
+        "LICENSE",
+        "README.md"
       ]
     }
   },

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:#F4F4F1;color:#191B18;font-family:'Instrument Sans','Helvetica Neue',Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  a{color:#2F5D50;text-decoration:none}
+  a:hover{color:#191B18}
+  ::selection{background:#191B18;color:#F4F4F1}
+  p{text-wrap:pretty}
+</style>
+</helmet>
+
+<div style="background:#F4F4F1">
+
+<div style="background:#ECECE7;border-bottom:1px solid #DCDDD5">
+    <div style="max-width:1240px;margin:0 auto;padding:0 40px;height:40px;display:flex;align-items:center;gap:20px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:#82867C">
+      <span>Theme</span>
+      <a href="Matrion Homepage.dc.html" style="color:#82867C" style-hover="color:#191B18">Editorial warm</a>
+      <a href="Matrion Homepage Signal.dc.html" style="color:#82867C" style-hover="color:#191B18">Slate signal</a>
+      <a href="Matrion Homepage Sage.dc.html" style="color:#191B18;border-bottom:1px solid #2F5D50;padding-bottom:3px">Ink sage</a>
+    </div>
+  </div>
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(244,244,241,0.88);backdrop-filter:blur(14px);border-bottom:1px solid #DCDDD5">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:32px">
+    <a href="#top" style="display:flex;align-items:baseline;gap:7px;color:#191B18">
+      <span style="font-family:'Instrument Serif',Georgia,serif;font-size:23px;letter-spacing:-0.01em">Matrion</span>
+      <span style="width:5px;height:5px;background:#2F5D50;border-radius:50%;display:block"></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:30px">
+      <a href="#expertise" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:#52564E">Services</a>
+      <a href="#outcomes" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:#52564E">Outcomes</a>
+      <a href="#geo" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:#52564E">GEO</a>
+      <a href="#team" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:#52564E">Team</a>
+      <a href="#contact" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:#191B18;color:#F4F4F1;padding:11px 18px" style-hover="background:#2F5D50;color:#F4F4F1">Talk to us</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" style="max-width:1240px;margin:0 auto;padding:96px 40px 0">
+  <div style="display:grid;grid-template-columns:1.12fr 0.88fr;gap:72px;align-items:end">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#82867C;display:flex;align-items:center;gap:12px">
+        <span style="width:28px;height:1px;background:#2F5D50;display:block"></span>
+        <span>Matrion — AI Systems Engineering &amp; Managed Services</span>
+      </div>
+      <h1 style="font-family:'Instrument Serif',Georgia,serif;font-weight:300;font-size:clamp(44px,6.2vw,88px);line-height:0.99;letter-spacing:-0.025em;margin:26px 0 0;color:#191B18">End-to-end enterprise <em style="font-style:italic;color:#2F5D50">transformation</em></h1>
+      <p style="font-size:19px;line-height:1.6;color:#52564E;margin:28px 0 0;max-width:34em">We bring AI strategy and deep systems engineering under one roof. From initial architectural design to live, SLA-backed production, Matrion embeds with your team to see every transformation through to the end.</p>
+      <div style="display:flex;align-items:center;gap:26px;margin-top:40px;flex-wrap:wrap">
+        <a href="#contact" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;background:#191B18;color:#F4F4F1;padding:16px 26px" style-hover="background:#2F5D50">Start a conversation</a>
+        <a href="#expertise" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#191B18;border-bottom:1px solid #DCDDD5;padding-bottom:4px" style-hover="border-bottom-color:#2F5D50;color:#2F5D50">Explore services →</a>
+      </div>
+    </div>
+
+    <figure style="margin:0">
+      <div style="border:1px solid #DCDDD5;background:#FBFBF9;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Governance &amp; AI Ops</div>
+        <div style="border:1px solid #DCDDD5;background:#F4F4F1;padding:20px;margin-top:12px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Your systems &amp; data</div>
+          <div style="border:1px solid #DCDDD5;background:#ECECE7;padding:20px;margin-top:12px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Agentic workflows</div>
+            <div style="background:#191B18;padding:22px;margin-top:12px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#93B3A8">Outcome</div>
+              <div style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;line-height:1.18;color:#F4F4F1;margin-top:8px">Cycle time, cost&nbsp;to&nbsp;serve, revenue</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#82867C;margin-top:12px">Fig. 01 — Every layer, one team</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section id="expertise" style="max-width:1240px;margin:0 auto;padding:120px 40px 0">
+  <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;border-top:1px solid #191B18;padding-top:26px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">01 &nbsp;/&nbsp; <span style="color:#82867C">Our services &amp; expertise</span></div>
+    <div>
+      <h2 style="font-family:'Instrument Serif',Georgia,serif;font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-0.025em;margin:0;color:#191B18">End-to-end capabilities across <em style="font-style:italic;color:#2F5D50">the technology stack</em></h2>
+      <p style="font-size:18px;line-height:1.6;color:#52564E;margin:20px 0 0;max-width:38em">From executive AI strategy and legacy system modernization to operational automation and 24/7 managed infrastructure, we bring comprehensive engineering excellence under one roof.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:56px">
+
+    <article style="border:1px solid #DCDDD5;background:#FBFBF9;display:flex;flex-direction:column;overflow:hidden" style-hover="border-color:#2F5D50;background:#FFFFFF">
+      <div style="position:relative;height:188px;background:#191B18;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <div style="width:136px;height:136px;border-radius:50%;border:1px solid #3C413A;display:flex;align-items:center;justify-content:center">
+            <div style="width:90px;height:90px;border-radius:50%;border:1px solid #565B52;display:flex;align-items:center;justify-content:center">
+              <div style="width:46px;height:46px;border-radius:50%;border:1px solid #93B3A8;display:flex;align-items:center;justify-content:center">
+                <div style="width:13px;height:13px;border-radius:50%;background:#93B3A8"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="position:absolute;top:34px;left:64px;width:7px;height:7px;border-radius:50%;background:#565B52"></div>
+        <div style="position:absolute;bottom:52px;right:70px;width:7px;height:7px;border-radius:50%;background:#757A6F"></div>
+        <div style="position:absolute;top:58px;right:52px;width:5px;height:5px;border-radius:50%;background:#3C413A"></div>
+        <div style="position:absolute;left:18px;bottom:16px;border:1px solid #565B52;padding:5px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E3E4DD">The Innovation &amp; Control Layer</div>
+      </div>
+      <div style="padding:32px 30px;display:flex;flex-direction:column;flex:1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">01 / Capability</div>
+        <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:27px;line-height:1.18;letter-spacing:-0.015em;margin:12px 0 0;color:#191B18">AI Strategy, Integration &amp; Governance</h3>
+        <p style="font-size:16px;line-height:1.65;color:#52564E;margin:14px 0 30px">We identify high-value AI use cases and integrate intelligent agents into your core workflows. Crucially, we wrap these implementations in strict AI Ops and governance — monitoring model performance, preventing data leakage, and ensuring compliance so your AI remains safe and predictable at scale.</p>
+        <a href="#contact" style="margin-top:auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D50;border-bottom:1px solid #DCDDD5;padding-bottom:4px" style-hover="border-bottom-color:#2F5D50;color:#191B18">Explore capability →</a>
+      </div>
+    </article>
+
+    <article style="border:1px solid #DCDDD5;background:#FBFBF9;display:flex;flex-direction:column;overflow:hidden" style-hover="border-color:#2F5D50;background:#FFFFFF">
+      <div style="position:relative;height:188px;background:#191B18;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
+          <div style="width:214px;height:28px;border:1px solid #3C413A;background:#1F221E"></div>
+          <div style="width:178px;height:28px;border:1px solid #565B52;background:#272A25"></div>
+          <div style="width:142px;height:28px;border:1px solid #93B3A8;background:#1A2B26"></div>
+        </div>
+        <div style="position:absolute;left:18px;bottom:16px;border:1px solid #565B52;padding:5px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E3E4DD">The Architecture Layer</div>
+      </div>
+      <div style="padding:32px 30px;display:flex;flex-direction:column;flex:1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">02 / Capability</div>
+        <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:27px;line-height:1.18;letter-spacing:-0.015em;margin:12px 0 0;color:#191B18">Core System Modernization</h3>
+        <p style="font-size:16px;line-height:1.65;color:#52564E;margin:14px 0 30px">Enterprises are held back by technical debt and fragmented systems. We untangle complex legacy infrastructure, modernize aging applications, and architect resilient, scalable platforms that are actually ready to support modern business demands.</p>
+        <a href="#contact" style="margin-top:auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D50;border-bottom:1px solid #DCDDD5;padding-bottom:4px" style-hover="border-bottom-color:#2F5D50;color:#191B18">Explore capability →</a>
+      </div>
+    </article>
+
+    <article style="border:1px solid #DCDDD5;background:#FBFBF9;display:flex;flex-direction:column;overflow:hidden" style-hover="border-color:#2F5D50;background:#FFFFFF">
+      <div style="position:relative;height:188px;background:#191B18;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <div style="display:grid;grid-template-columns:repeat(6,16px);gap:11px">
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#93B3A8"></div>
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#565B52"></div>
+            <div style="height:16px;background:#565B52"></div>
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#93B3A8"></div>
+            <div style="height:16px;background:#2F332D"></div>
+            <div style="height:16px;background:#2F332D"></div>
+          </div>
+        </div>
+        <div style="position:absolute;left:18px;bottom:16px;border:1px solid #565B52;padding:5px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E3E4DD">The Efficiency Layer</div>
+      </div>
+      <div style="padding:32px 30px;display:flex;flex-direction:column;flex:1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">03 / Capability</div>
+        <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:27px;line-height:1.18;letter-spacing:-0.015em;margin:12px 0 0;color:#191B18">Operational Automation &amp; Integration</h3>
+        <p style="font-size:16px;line-height:1.65;color:#52564E;margin:14px 0 30px">Not every problem requires generative AI. We streamline day-to-day operations using robust robotic process automation (RPA), API integrations, and workflow engineering. We make your disparate software systems talk to each other, eliminating manual bottlenecks and accelerating delivery.</p>
+        <a href="#contact" style="margin-top:auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D50;border-bottom:1px solid #DCDDD5;padding-bottom:4px" style-hover="border-bottom-color:#2F5D50;color:#191B18">Explore capability →</a>
+      </div>
+    </article>
+
+    <article style="border:1px solid #DCDDD5;background:#FBFBF9;display:flex;flex-direction:column;overflow:hidden" style-hover="border-color:#2F5D50;background:#FFFFFF">
+      <div style="position:relative;height:188px;background:#191B18;overflow:hidden">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:9px">
+          <div style="width:6px;height:22px;background:#2F332D"></div>
+          <div style="width:6px;height:38px;background:#3C413A"></div>
+          <div style="width:6px;height:26px;background:#2F332D"></div>
+          <div style="width:6px;height:64px;background:#565B52"></div>
+          <div style="width:6px;height:30px;background:#2F332D"></div>
+          <div style="width:6px;height:96px;background:#93B3A8"></div>
+          <div style="width:6px;height:34px;background:#2F332D"></div>
+          <div style="width:6px;height:52px;background:#3C413A"></div>
+          <div style="width:6px;height:24px;background:#2F332D"></div>
+          <div style="width:6px;height:40px;background:#3C413A"></div>
+          <div style="width:6px;height:20px;background:#2F332D"></div>
+        </div>
+        <div style="position:absolute;left:18px;bottom:16px;border:1px solid #565B52;padding:5px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E3E4DD">The Reliability Layer</div>
+      </div>
+      <div style="padding:32px 30px;display:flex;flex-direction:column;flex:1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">04 / Capability</div>
+        <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:27px;line-height:1.18;letter-spacing:-0.015em;margin:12px 0 0;color:#191B18">Managed IT Services</h3>
+        <p style="font-size:16px;line-height:1.65;color:#52564E;margin:14px 0 30px">Unwavering support for your technology investments. We provide end-to-end system administration, proactive maintenance, security monitoring, and dedicated ownership to keep your critical infrastructure running flawlessly day after day.</p>
+        <a href="#contact" style="margin-top:auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D50;border-bottom:1px solid #DCDDD5;padding-bottom:4px" style-hover="border-bottom-color:#2F5D50;color:#191B18">Explore capability →</a>
+      </div>
+    </article>
+  </div>
+
+  <article style="margin-top:28px;background:#191B18;border:1px solid #191B18;padding:44px 40px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#93B3A8">05 &nbsp;/&nbsp; The Embedded Delivery Layer</div>
+        <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:36px;line-height:1.12;letter-spacing:-0.02em;margin:16px 0 0;color:#F4F4F1">Forward Deployed AI Engineers</h3>
+        <p style="font-size:16.5px;line-height:1.65;color:#ADB1A8;margin:16px 0 0">We embed senior AI engineers directly into your company — in your repos, your data, your roadmap. They work inside your team rituals to ship production code and evaluation suites that your own engineers review, operate, and own from day one.</p>
+        <a href="#contact" style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F4F1;border-bottom:1px solid #565B52;padding-bottom:4px;margin-top:28px" style-hover="border-bottom-color:#93B3A8;color:#93B3A8">Embed an engineer →</a>
+      </div>
+      <div style="display:grid;gap:14px">
+        <div style="border:1px solid #3C413A;background:#101210;padding:22px 24px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:2;color:#ADB1A8">
+          <div style="display:flex;gap:10px;margin-bottom:12px">
+            <span style="width:8px;height:8px;border-radius:50%;background:#3C413A;display:block"></span>
+            <span style="width:8px;height:8px;border-radius:50%;background:#3C413A;display:block"></span>
+            <span style="width:8px;height:8px;border-radius:50%;background:#3C413A;display:block"></span>
+          </div>
+          <div style="color:#9BB6D6">$ git clone enterprise/ai.git</div>
+          <div style="color:#8FC7A6">✔ Senior AI engineer onboarded</div>
+          <div>✔ Shipping production code…</div>
+        </div>
+        <div style="border:1px solid #93B3A8;background:#1A2B26;padding:22px 24px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#93B3A8">Evaluation suite · live in prod</div>
+          <div style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;line-height:1.2;color:#F4F4F1;margin-top:10px">100% team handover &amp; ownership</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="outcomes" style="max-width:1240px;margin:0 auto;padding:120px 40px 0">
+  <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;border-top:1px solid #191B18;padding-top:26px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">02 &nbsp;/&nbsp; <span style="color:#82867C">Outcomes</span></div>
+    <div>
+      <h2 style="font-family:'Instrument Serif',Georgia,serif;font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-0.025em;margin:0;color:#191B18">AI that shows up<br>in <em style="font-style:italic;color:#2F5D50">the numbers</em></h2>
+      <p style="font-size:18px;line-height:1.6;color:#52564E;margin:20px 0 0;max-width:38em">We build agentic systems to move business metrics — revenue, cycle time, cost to serve — and to put real AI capability inside the product your customers already pay for.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:56px">
+
+    <div style="background:#FBFBF9;border:1px solid #DCDDD5;padding:40px" style-hover="background:#FFFFFF">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid #DCDDD5;padding-bottom:26px">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(48px,5vw,70px);line-height:0.9;letter-spacing:-0.035em;color:#191B18">3×</div>
+        <div style="display:flex;align-items:flex-end;gap:6px;height:54px">
+          <div style="width:11px;height:26%;background:#E2E3DC"></div>
+          <div style="width:11px;height:40%;background:#E2E3DC"></div>
+          <div style="width:11px;height:58%;background:#DCDDD5"></div>
+          <div style="width:11px;height:76%;background:#8FAFA4"></div>
+          <div style="width:11px;height:100%;background:#2F5D50"></div>
+        </div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50;margin-top:26px">Acceleration &amp; velocity</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:28px;line-height:1.18;letter-spacing:-0.015em;margin:10px 0 0;color:#191B18">Faster time-to-value</h3>
+      <p style="font-size:16px;line-height:1.65;color:#52564E;margin:12px 0 0">From quarters to weeks. By deploying a narrow, high-leverage agentic slice to production early, your business begins compounding returns while the wider system roadmap is still expanding.</p>
+    </div>
+
+    <div style="background:#FBFBF9;border:1px solid #DCDDD5;padding:40px" style-hover="background:#FFFFFF">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid #DCDDD5;padding-bottom:26px">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(48px,5vw,70px);line-height:0.9;letter-spacing:-0.035em;color:#191B18">+40%</div>
+        <div style="display:flex;align-items:flex-end;gap:9px;height:54px">
+          <div style="width:20px;height:42%;background:#E2E3DC;border-top:2px solid #B9BCB1"></div>
+          <div style="width:20px;height:68%;background:#CFDED8;border-top:2px solid #5A8577"></div>
+          <div style="width:20px;height:100%;background:#2F5D50"></div>
+        </div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50;margin-top:26px">Operational leverage</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:28px;line-height:1.18;letter-spacing:-0.015em;margin:10px 0 0;color:#191B18">Engineering throughput</h3>
+      <p style="font-size:16px;line-height:1.65;color:#52564E;margin:12px 0 0">Autonomous agents absorb repetitive, high-volume operational loads — research, triage, reconciliation, and first-pass drafting — freeing your talent to focus entirely on high-judgment decisions.</p>
+    </div>
+
+    <div style="background:#ECECE7;border:1px solid #DCDDD5;padding:40px" style-hover="background:#F0F0EB">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid #DCDDD5;padding-bottom:26px">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(48px,5vw,70px);line-height:0.9;letter-spacing:-0.035em;color:#191B18">↓60%</div>
+        <div style="display:flex;align-items:flex-end;gap:6px;height:54px">
+          <div style="width:11px;height:100%;background:#2F5D50"></div>
+          <div style="width:11px;height:78%;background:#8FAFA4"></div>
+          <div style="width:11px;height:58%;background:#D0D2C9"></div>
+          <div style="width:11px;height:46%;background:#DCDDD5"></div>
+          <div style="width:11px;height:38%;background:#E3E4DD"></div>
+        </div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50;margin-top:26px">Unit economics</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:28px;line-height:1.18;letter-spacing:-0.015em;margin:10px 0 0;color:#191B18">Falling costs at scale</h3>
+      <p style="font-size:16px;line-height:1.65;color:#52564E;margin:12px 0 0">Through intelligent model routing, prompt caching, and small-model substitution, your cost per outcome decreases as volume rises — preventing inference bills from outpacing revenue growth.</p>
+    </div>
+
+    <div style="background:#ECECE7;border:1px solid #DCDDD5;padding:40px" style-hover="background:#F0F0EB">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid #DCDDD5;padding-bottom:26px">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(48px,5vw,70px);line-height:0.9;letter-spacing:-0.035em;color:#191B18">100%</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;width:112px">
+          <div style="height:16px;background:#2F5D50"></div>
+          <div style="height:16px;background:#2F5D50"></div>
+          <div style="height:16px;background:#2F5D50"></div>
+          <div style="height:16px;background:#8FAFA4"></div>
+          <div style="height:16px;background:#8FAFA4"></div>
+          <div style="height:16px;background:#8FAFA4"></div>
+        </div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50;margin-top:26px">Enterprise governance</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:28px;line-height:1.18;letter-spacing:-0.015em;margin:10px 0 0;color:#191B18">Audit-ready compliance</h3>
+      <p style="font-size:16px;line-height:1.65;color:#52564E;margin:12px 0 0">Traceable decision logs, automated PII guardrails, and human oversight built from the first commit — satisfying DPDP, EU AI Act, and ISO/IEC 42001 as a natural by-product of delivery.</p>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ showUnitEconomicsChart }}" hint-placeholder-val="{{ true }}">
+  <figure style="margin:2px 0 0;background:#FBFBF9;border:1px solid #DCDDD5;padding:40px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Volume of work handled</div>
+        <div style="display:flex;align-items:flex-end;gap:10px;height:132px;margin-top:18px">
+          <div style="flex:1;height:20%;background:#E2E3DC;border-top:2px solid #ADB0A5"></div>
+          <div style="flex:1;height:33%;background:#E2E3DC;border-top:2px solid #ADB0A5"></div>
+          <div style="flex:1;height:47%;background:#E2E3DC;border-top:2px solid #ADB0A5"></div>
+          <div style="flex:1;height:62%;background:#E2E3DC;border-top:2px solid #ADB0A5"></div>
+          <div style="flex:1;height:80%;background:#E2E3DC;border-top:2px solid #ADB0A5"></div>
+          <div style="flex:1;height:100%;background:#E2E3DC;border-top:2px solid #191B18"></div>
+        </div>
+        <div style="height:1px;background:#191B18"></div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">Cost per outcome</div>
+        <div style="display:flex;align-items:flex-end;gap:10px;height:132px;margin-top:18px">
+          <div style="flex:1;height:100%;background:#DDE8E4;border-top:2px solid #2F5D50"></div>
+          <div style="flex:1;height:84%;background:#DDE8E4;border-top:2px solid #2F5D50"></div>
+          <div style="flex:1;height:69%;background:#DDE8E4;border-top:2px solid #2F5D50"></div>
+          <div style="flex:1;height:56%;background:#DDE8E4;border-top:2px solid #2F5D50"></div>
+          <div style="flex:1;height:46%;background:#DDE8E4;border-top:2px solid #2F5D50"></div>
+          <div style="flex:1;height:39%;background:#DDE8E4;border-top:2px solid #2F5D50"></div>
+        </div>
+        <div style="height:1px;background:#191B18"></div>
+      </div>
+    </div>
+    <figcaption style="display:flex;justify-content:space-between;gap:24px;margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#82867C">
+      <span>Fig. 02 — Model routing, caching and small-model substitution at work</span>
+      <span>Illustrative</span>
+    </figcaption>
+  </figure>
+  </sc-if>
+</section>
+
+<sc-if value="{{ showGeoSection }}" hint-placeholder-val="{{ true }}">
+<section id="geo" style="background:#191B18;margin-top:120px">
+  <div style="max-width:1240px;margin:0 auto;padding:110px 40px">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;border-top:1px solid #565B52;padding-top:26px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#93B3A8">03 &nbsp;/&nbsp; <span style="color:#91958C">GEO</span></div>
+      <div>
+        <h2 style="font-family:'Instrument Serif',Georgia,serif;font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-0.025em;margin:0;color:#F4F4F1">Your buyers now ask<br><em style="font-style:italic;color:#93B3A8">ChatGPT and Gemini</em> first</h2>
+        <p style="font-size:18px;line-height:1.6;color:#ADB1A8;margin:20px 0 0;max-width:38em">Want your website optimised for GEO — so AI assistants find, understand and cite you? We audit how generative engines read your business, then fix the structure, evidence and markup that decide whether you appear at all.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr;align-items:stretch;margin-top:64px">
+      <div style="border:1px solid #3C413A;padding:32px;min-height:196px;display:flex;flex-direction:column">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#91958C">Step 01</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;line-height:1.2;color:#F4F4F1;margin-top:14px">A buyer asks an assistant who can modernise their stack</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px"><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">ChatGPT</span><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">Gemini</span><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">Claude</span><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">Perplexity</span></div>
+      </div>
+      <div style="align-self:center;text-align:center;color:#565B52;font-size:20px">→</div>
+      <div style="border:1px solid #3C413A;padding:32px;min-height:196px;display:flex;flex-direction:column">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#91958C">Step 02</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;line-height:1.2;color:#F4F4F1;margin-top:14px">It retrieves the sources it can parse and trust</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px"><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">Structure</span><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">Evidence</span><span style="border:1px solid #565B52;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E3E4DD">Markup</span></div>
+      </div>
+      <div style="align-self:center;text-align:center;color:#565B52;font-size:20px">→</div>
+      <div style="border:1px solid #93B3A8;background:#1A2B26;padding:32px;min-height:196px;display:flex;flex-direction:column">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#93B3A8">Step 03</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;line-height:1.2;color:#F4F4F1;margin-top:14px">You are named in the answer — or your competitor is</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px"><span style="border:1px solid #93B3A8;background:#1A2B26;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F4F1">Matrion, cited</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <a href="#contact" style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;background:#F4F4F1;color:#191B18;padding:16px 26px" style-hover="background:#93B3A8">Talk to us about a GEO audit</a>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<section id="team" style="max-width:1240px;margin:0 auto;padding:120px 40px 0">
+  <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;border-top:1px solid #191B18;padding-top:26px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">04 &nbsp;/&nbsp; <span style="color:#82867C">About us</span></div>
+    <div>
+      <h2 style="font-family:'Instrument Serif',Georgia,serif;font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-0.025em;margin:0;color:#191B18">Agentic AI experts who have<br>already built <em style="font-style:italic;color:#2F5D50">at scale</em></h2>
+      <p style="font-size:18px;line-height:1.6;color:#52564E;margin:20px 0 0;max-width:38em">We combine agentic system engineering, deep AI expertise and embedded delivery. Our mission is to turn AI agents into dependable operating systems for real business work.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px">
+
+    <article style="display:flex;flex-direction:column;border-top:1px solid #191B18;padding-top:24px;min-height:250px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">01</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;line-height:1.14;letter-spacing:-0.02em;margin:20px 0 0;color:#191B18">Google India Engineering Leader</h3>
+      <div style="align-self:flex-start;margin-top:auto;border:1px solid #DCDDD5;background:#FBFBF9;padding:8px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#52564E">Google Gemini Enterprise</div>
+    </article>
+
+    <article style="display:flex;flex-direction:column;border-top:1px solid #191B18;padding-top:24px;min-height:250px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">02</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;line-height:1.14;letter-spacing:-0.02em;margin:20px 0 0;color:#191B18">Director / General Manager</h3>
+      <div style="align-self:flex-start;margin-top:auto;border:1px solid #DCDDD5;background:#FBFBF9;padding:8px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#52564E">Amazon Visual Shopping</div>
+    </article>
+
+    <article style="display:flex;flex-direction:column;border-top:1px solid #191B18;padding-top:24px;min-height:250px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">03</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;line-height:1.14;letter-spacing:-0.02em;margin:20px 0 0;color:#191B18">Vice-President, ML &amp; Analytics</h3>
+      <div style="align-self:flex-start;margin-top:auto;border:1px solid #DCDDD5;background:#FBFBF9;padding:8px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#52564E">Sears</div>
+    </article>
+
+    <article style="display:flex;flex-direction:column;border-top:1px solid #191B18;padding-top:24px;min-height:250px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">04</div>
+      <h3 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;line-height:1.14;letter-spacing:-0.02em;margin:20px 0 0;color:#191B18">Chief Technology Officer</h3>
+      <div style="align-self:flex-start;margin-top:auto;border:1px solid #DCDDD5;background:#FBFBF9;padding:8px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#52564E">Security startup acquired by McAfee</div>
+    </article>
+  </div>
+</section>
+
+<section id="contact" style="max-width:1240px;margin:0 auto;padding:120px 40px 0">
+  <div style="border-top:1px solid #191B18;padding-top:26px;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D50">05 &nbsp;/&nbsp; <span style="color:#82867C">Next step</span></div>
+    <div>
+      <h2 style="font-family:'Instrument Serif',Georgia,serif;font-weight:300;font-size:clamp(38px,5.4vw,72px);line-height:1.02;letter-spacing:-0.028em;margin:0;color:#191B18">Thirty minutes to find the<br>real <em style="font-style:italic;color:#2F5D50">point of leverage</em></h2>
+      <p style="font-size:18px;line-height:1.6;color:#52564E;margin:24px 0 0;max-width:35em">A 30-minute call to identify where an agentic system can create real leverage — and a straight answer on whether the workflow is ready for it. If it is, we can have an engineer embedded within weeks.</p>
+      <div style="display:flex;align-items:center;gap:26px;margin-top:40px;flex-wrap:wrap">
+        <a href="mailto:info@matrion.in" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;background:#191B18;color:#F4F4F1;padding:16px 26px" style-hover="background:#2F5D50">Email us</a>
+        <a href="tel:+919845576009" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#191B18;border-bottom:1px solid #DCDDD5;padding-bottom:4px" style-hover="border-bottom-color:#2F5D50;color:#2F5D50">Call +91 98455 76009</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="max-width:1240px;margin:120px auto 0;padding:0 40px 64px">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;border-top:1px solid #DCDDD5;padding-top:36px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Email</div>
+      <a href="mailto:info@matrion.in" style="font-family:'Instrument Serif',Georgia,serif;font-size:21px;color:#191B18;display:block;margin-top:8px" style-hover="color:#2F5D50">info@matrion.in</a>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Phone</div>
+      <a href="tel:+919845576009" style="font-family:'Instrument Serif',Georgia,serif;font-size:21px;color:#191B18;display:block;margin-top:8px" style-hover="color:#2F5D50">+91 98455 76009</a>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Web</div>
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:21px;color:#191B18;margin-top:8px">matrion.in</div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#82867C">Focus</div>
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:21px;color:#191B18;margin-top:8px">Agentic &amp; Managed Services</div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;gap:24px;margin-top:56px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#82867C">
+    <span>© 2026 Matrion</span>
+    <span>Agentic Systems · Managed Services · Products</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showUnitEconomicsChart&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showGeoSection&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showUnitEconomicsChart: this.props.showUnitEconomicsChart ?? true,
+      showGeoSection: this.props.showGeoSection ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
