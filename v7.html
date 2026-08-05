@@ -1,521 +1,713 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Matrion - End-to-End Enterprise Transformation</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "stroke-subtle": "rgba(255, 255, 255, 0.1)",
-                      "tertiary-fixed-dim": "#eac324",
-                      "primary-container": "#00f0ff",
-                      "secondary-container": "#ff5e07",
-                      "on-secondary-container": "#531900",
-                      "on-secondary-fixed": "#370e00",
-                      "secondary-fixed-dim": "#ffb59a",
-                      "surface-container": "#201f21",
-                      "surface-bright": "#39393b",
-                      "on-background": "#e5e1e4",
-                      "surface": "#131315",
-                      "surface-container-highest": "#353437",
-                      "inverse-on-surface": "#313032",
-                      "surface-container-low": "#1c1b1d",
-                      "on-tertiary": "#3b2f00",
-                      "primary-fixed": "#7df4ff",
-                      "on-primary-fixed": "#002022",
-                      "on-secondary-fixed-variant": "#802a00",
-                      "secondary-fixed": "#ffdbce",
-                      "on-primary-fixed-variant": "#004f54",
-                      "on-tertiary-container": "#715d00",
-                      "surface-container-lowest": "#0e0e10",
-                      "outline": "#849495",
-                      "on-error-container": "#ffdad6",
-                      "inverse-primary": "#006970",
-                      "primary": "#dbfcff",
-                      "outline-variant": "#3b494b",
-                      "background": "#131315",
-                      "error": "#ffb4ab",
-                      "error-container": "#93000a",
-                      "primary-fixed-dim": "#00dbe9",
-                      "on-tertiary-fixed-variant": "#554500",
-                      "on-secondary": "#5a1b00",
-                      "inverse-surface": "#e5e1e4",
-                      "surface-tint": "#00dbe9",
-                      "secondary": "#ffb59a",
-                      "on-primary": "#00363a",
-                      "ink-bone": "#FCFAF6",
-                      "on-surface-variant": "#b9cacb",
-                      "tertiary": "#fff5de",
-                      "on-error": "#690005",
-                      "surface-charcoal": "#121214",
-                      "surface-container-high": "#2a2a2c",
-                      "tertiary-fixed": "#ffe179",
-                      "on-primary-container": "#006970",
-                      "surface-glass": "rgba(255, 255, 255, 0.03)",
-                      "surface-dim": "#131315",
-                      "on-surface": "#e5e1e4",
-                      "on-tertiary-fixed": "#231b00",
-                      "tertiary-container": "#fed639",
-                      "surface-variant": "#353437"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "margin-mobile": "20px",
-                      "unit": "8px",
-                      "gutter": "24px",
-                      "container-max": "1440px",
-                      "margin-desktop": "64px"
-              },
-              "fontFamily": {
-                      "display-xl": [
-                              "Playfair Display"
-                      ],
-                      "headline-md": [
-                              "Playfair Display"
-                      ],
-                      "headline-lg": [
-                              "Playfair Display"
-                      ],
-                      "body-md": [
-                              "Geist"
-                      ],
-                      "label-mono": [
-                              "JetBrains Mono"
-                      ],
-                      "display-xl-mobile": [
-                              "Playfair Display"
-                      ],
-                      "body-lg": [
-                              "Geist"
-                      ]
-              },
-              "fontSize": {
-                      "display-xl": [
-                              "72px",
-                              {
-                                      "lineHeight": "84px",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "40px",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-lg": [
-                              "40px",
-                              {
-                                      "lineHeight": "48px",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "24px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-mono": [
-                              "12px",
-                              {
-                                      "lineHeight": "16px",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "display-xl-mobile": [
-                              "44px",
-                              {
-                                      "lineHeight": "52px",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
-        }
-    </script>
-<style>
-        /* Glassmorphism utility */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .glass-panel-hover:hover {
-            box-shadow: inset 0 0 40px rgba(0, 219, 233, 0.05);
-            border-color: rgba(0, 219, 233, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        /* Subtle mesh gradient background */
-        .mesh-bg {
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 219, 233, 0.08) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(255, 94, 7, 0.05) 0px, transparent 50%);
-            background-size: 100% 100%;
-            background-attachment: fixed;
-        }
-    </style>
-</head>
-<body class="bg-surface text-on-surface font-body-md mesh-bg min-h-screen selection:bg-primary-fixed-dim selection:text-on-primary-fixed antialiased">
-<!-- TopNavBar Shared Component -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-stroke-subtle">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit-2 max-w-container-max mx-auto h-[72px]">
-<a class="flex items-center hover:scale-95 duration-200" href="#">
-                <img src="assets/logo-true-transparent.png" alt="Matrion" class="h-12 w-auto rounded-sm" />
-            </a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="#services">Services</a>
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="#outcomes">Outcomes</a>
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="#team">Team</a>
-</div>
-<a class="hidden md:inline-flex bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-6 py-2 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300" href="#contact">
-                Talk to us
-            </a>
-</div>
-</nav>
-<main class="pt-[72px]">
-<!-- Hero Section -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-16 pb-16 flex flex-col md:flex-row md:items-stretch items-center gap-16">
-<div class="w-full md:w-5/12 flex flex-col items-start gap-8">
-<div class="flex items-center gap-3">
-<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping absolute"></span>
-<span class="w-2 h-2 rounded-full bg-primary-fixed-dim relative"></span>
-<span class="font-label-mono text-label-mono text-primary-fixed-dim uppercase tracking-widest">Matrion — AI Systems Engineering &amp; Managed Services</span>
-</div>
-<h1 class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-display-xl text-on-surface">
-                    End-to-End Enterprise <br/>
-<span class="italic text-primary-fixed-dim font-light">Transformation</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                    The Matrion team consists of diverse professionals with over two decades of experience in top tech companies like Google, Microsoft, and Amazon, featuring SMEs with extensive expertise in Retail, NBFC, Logistics, and Automobile.
-                    <br/><br/>
-                    We bring AI strategy and deep systems engineering under one roof — helping enterprises solve their hardest operational and technology problems.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-<a class="inline-flex justify-center items-center gap-2 bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-8 py-4 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300 w-full sm:w-auto" href="#contact">
-                        Start a conversation
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-<a class="inline-flex justify-center items-center bg-surface-glass border border-stroke-subtle text-on-surface font-body-md px-8 py-4 rounded-DEFAULT hover:border-primary-fixed-dim/50 hover:bg-primary-fixed-dim/5 transition-all duration-300 w-full sm:w-auto" href="#services">
-                        Explore services
-                    </a>
-</div>
-</div>
-<div class="w-full md:w-7/12 relative hidden md:flex items-center justify-center">
-<img src="hero-main.jpg" alt="Matrion Enterprise AI" class="w-full h-full rounded-xl shadow-2xl border border-stroke-subtle object-cover object-top" style="max-height: 720px;" />
-</div>
-</section>
-<!-- Services Section -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 border-t border-stroke-subtle" id="services">
-<div class="mb-16 w-full">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">01 / Our Services &amp; Expertise</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">End-to-end capabilities across the technology stack</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">From executive AI strategy and legacy system modernization to operational automation and 24/7 managed infrastructure, we bring comprehensive engineering excellence under one roof.</p>
-</div>
-<!-- Bento Grid for Capabilities -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Card 1 -->
-<div class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The Innovation &amp; Control Layer</span>
-<span class="font-label-mono text-label-mono text-primary-fixed-dim">01</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">AI Strategy, Integration &amp; Governance</h3>
-<p class="text-on-surface-variant mb-0">We identify high-value AI use cases and integrate intelligent agents into core workflows. We ensure strict AI Ops and governance—monitoring performance and preventing data leakage to keep your AI safe at scale.</p>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The Architecture Layer</span>
-<span class="font-label-mono text-label-mono text-primary-fixed-dim">02</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Core System Modernization</h3>
-<p class="text-on-surface-variant mb-0">We overhaul complex legacy infrastructure and modernize aging applications. We build resilient, scalable platforms ready to support modern business demands.</p>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The Efficiency Layer</span>
-<span class="font-label-mono text-label-mono text-primary-fixed-dim">03</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Operational Automation &amp; Integration</h3>
-<p class="text-on-surface-variant mb-0">We streamline operations using robust robotic process automation (RPA), API integrations, and workflow engineering. We connect your disparate systems, eliminating manual bottlenecks and accelerating delivery.</p>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The Reliability Layer</span>
-<span class="font-label-mono text-label-mono text-primary-fixed-dim">04</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Managed IT Services</h3>
-<p class="text-on-surface-variant mb-0">We provide end-to-end system administration, proactive maintenance, and security monitoring. We offer dedicated ownership to keep your critical infrastructure running flawlessly.</p>
-</div>
-</div>
-<!-- Full Width Card 5 -->
-<div class="md:col-span-2 glass-panel glass-panel-hover rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center justify-between group bg-gradient-to-r from-surface-glass to-primary-fixed-dim/5">
-<div class="w-full md:w-2/3">
-<div class="flex justify-between items-start mb-8">
-<span class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The Embedded Delivery Layer</span>
-<span class="font-label-mono text-label-mono text-primary-fixed-dim md:hidden">05</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Forward Deployed AI Engineers</h3>
-<p class="text-on-surface-variant mb-6">We embed senior AI engineers directly into your company. They work inside your team rituals to ship production code and evaluation suites that your engineers own from day one.</p>
-<a class="inline-flex items-center gap-2 bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-6 py-2 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300" href="#">
-                            Embed an engineer
-                        </a>
-</div>
-<div class="w-full md:w-1/3 flex justify-end">
-<div class="w-full max-w-xs aspect-square border border-stroke-subtle rounded-lg bg-surface-container-lowest p-4 font-label-mono text-xs text-on-surface-variant flex flex-col">
-<div class="flex gap-2 mb-4">
-<span class="w-2 h-2 rounded-full bg-error"></span>
-<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
-<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
-</div>
-<div class="flex-grow space-y-2 opacity-80">
-<p><span class="text-primary-fixed-dim">$</span> git clone enterprise/ai.git</p>
-<p class="text-on-surface">✔ Senior AI Engineer onboarded</p>
-<p class="text-on-surface">✔ Shipping production code...</p>
-<p class="mt-4 text-primary-fixed-dim">EVALUATION SUITE · LIVE IN PROD</p>
-<p class="font-bold text-on-surface">100% Team Handover &amp; Ownership</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-12 glass-panel rounded-xl p-6 text-center border-dashed">
-<p class="text-on-surface-variant">Want your website optimised for GEO — so AI assistants find, understand and cite you? <a class="text-primary-fixed-dim underline underline-offset-4 decoration-primary-fixed-dim/30 hover:decoration-primary-fixed-dim transition-colors" href="#">Talk to us about a GEO audit.</a></p>
-</div>
-</section>
-<!-- Outcomes Section -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 border-t border-stroke-subtle relative overflow-hidden" id="outcomes">
-<!-- Subtle background blob -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-fixed-dim/5 rounded-full blur-3xl -z-10"></div>
-<div class="mb-16 w-full">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">02 / Outcomes</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">AI that shows up in the numbers</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">We build agentic systems to move business metrics — revenue, cycle time, cost to serve — and to put real AI capability inside the product your customers already pay for.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Stat 1 -->
-<div class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl text-primary-fixed-dim">trending_up</span>
-</div>
-<div class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6"><span class="counter" data-target="3">0</span>x</div>
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Acceleration &amp; Velocity</span>
-<h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">Faster Time-to-Value</h4>
-<p class="text-on-surface-variant">From quarters to weeks. By deploying a narrow, high-leverage agentic slice to production early, your business begins compounding returns while the wider system roadmap is still expanding.</p>
-</div>
-<!-- Stat 2 -->
-<div class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl text-primary-fixed-dim">bar_chart</span>
-</div>
-<div class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6">+<span class="counter" data-target="40">0</span>%</div>
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Operational Leverage</span>
-<h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">Engineering Throughput</h4>
-<p class="text-on-surface-variant">Autonomous agents absorb repetitive, high-volume operational loads — research, triage, reconciliation, and first-pass drafting — freeing your talent to focus entirely on high-judgment decisions.</p>
-</div>
-<!-- Stat 3 -->
-<div class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl text-primary-fixed-dim">trending_down</span>
-</div>
-<div class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-6xl">arrow_downward</span>
-<span class="counter" data-target="60">0</span>%
-                    </div>
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Unit Economics</span>
-<h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">Falling Costs at Scale</h4>
-<p class="text-on-surface-variant">Through intelligent model routing, prompt caching, and small-model substitution, your cost per outcome decreases as volume rises — preventing inference bills from outpacing revenue growth.</p>
-</div>
-<!-- Stat 4 -->
-<div class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl text-primary-fixed-dim">verified_user</span>
-</div>
-<div class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6"><span class="counter" data-target="100">0</span>%</div>
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Enterprise Governance</span>
-<h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">Audit-Ready Compliance</h4>
-<p class="text-on-surface-variant">Traceable decision logs, automated PII guardrails, and human oversight built from the first commit — satisfying DPDP, EU AI Act, and ISO/IEC 42001 as a natural by-product of delivery.</p>
-</div>
-</div>
-</section>
-<!-- About Us / Team Section -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 border-t border-stroke-subtle" id="team">
-<div class="mb-16 w-full">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">03 / About Us</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Agentic AI experts who have already built at scale</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">We combine agentic system engineering, deep AI expertise and embedded delivery. Our mission is to turn AI agents into dependable operating systems for real business work.</p>
-</div>
-<div class="flex flex-col border-t border-stroke-subtle">
-<!-- Team Member Row -->
-<div class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
-<div class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">01</div>
-<div class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">Google India Engineering Leader</div>
-<div class="w-full md:w-6/12 text-on-surface-variant">Google Gemini Enterprise</div>
-</div>
-<!-- Team Member Row -->
-<div class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
-<div class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">02</div>
-<div class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">Director / General Manager</div>
-<div class="w-full md:w-6/12 text-on-surface-variant">Amazon Visual Shopping</div>
-</div>
-<!-- Team Member Row -->
-<div class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
-<div class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">03</div>
-<div class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">Vice-President, ML &amp; Analytics</div>
-<div class="w-full md:w-6/12 text-on-surface-variant">Sears</div>
-</div>
-<!-- Team Member Row -->
-<div class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
-<div class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">04</div>
-<div class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">Chief Technology Officer</div>
-<div class="w-full md:w-6/12 text-on-surface-variant">Security startup acquired by McAfee</div>
-</div>
-</div>
-</section>
-<!-- Next Step / Contact CTA -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-16 pb-32 border-t border-stroke-subtle mb-32" id="contact">
-<div class="glass-panel rounded-2xl p-8 md:p-16 relative overflow-hidden bg-gradient-to-br from-surface-glass to-primary-fixed-dim/5 border border-primary-fixed-dim/20 shadow-[0_0_50px_rgba(0,219,233,0.05)]">
-<div class="relative z-10">
-<span class="font-label-mono text-label-mono text-primary-fixed-dim uppercase tracking-widest block mb-4">04 / Next Step</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 w-full">A 30-minute call to identify where an agentic system can create real leverage — and a straight answer on whether the workflow is ready for it.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">If it is, we can have an engineer embedded within weeks.</p>
-<div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-<a class="inline-flex justify-center items-center gap-2 bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-8 py-4 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300 w-full sm:w-auto" href="mailto:info@matrion.in">
-                                Email us <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-<div class="flex items-center gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary-fixed-dim">call</span>
-<a class="hover:text-primary-fixed-dim transition-colors" href="tel:+919845576009">+91 98455 76009</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer Shared Component -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-stroke-subtle">
-<div class="grid grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop pt-16 pb-32 max-w-container-max mx-auto">
-<div class="col-span-12 md:col-span-4 flex flex-col justify-between mb-12 md:mb-0">
-<a class="flex items-center hover:opacity-80 transition-opacity mb-8 block w-fit" href="#">
-                    <img src="assets/logo-true-transparent.png" alt="Matrion" class="h-12 w-auto rounded-sm" />
-                </a>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
-                    © 2024 Matrion. Sophisticated Precision in AI Systems Engineering.
-                </p>
-</div>
-<div class="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
-<div class="flex flex-col gap-4">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Email</span>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="mailto:info@matrion.in">info@matrion.in</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Phone</span>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="tel:+919845576009">+91 98455 76009</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Links</span>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="#services">Services</a>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="#outcomes">Outcomes</a>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="#team">Team</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Legal</span>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
-</div>
-</div>
-</div>
-</footer>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
-        if (isReducedMotion) {
-            document.querySelectorAll('.counter').forEach(el => {
-                el.innerText = el.getAttribute('data-target');
-            });
-            return;
-        }
+<html class="dark" lang="en">
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.remove('opacity-0', 'translate-y-8');
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    
-                    const counters = entry.target.querySelectorAll('.counter');
-                    counters.forEach(counter => {
-                        if (!counter.classList.contains('counted')) {
-                            counter.classList.add('counted');
-                            const target = +counter.getAttribute('data-target');
-                            let count = 0;
-                            const duration = 2000;
-                            const frameDuration = 1000 / 60;
-                            const totalFrames = Math.round(duration / frameDuration);
-                            const increment = target / totalFrames;
-                            
-                            const updateCount = () => {
-                                count += increment;
-                                if (count < target) {
-                                    counter.innerText = Math.ceil(count);
-                                    requestAnimationFrame(updateCount);
-                                } else {
-                                    counter.innerText = target;
-                                }
-                            };
-                            updateCount();
-                        }
-                    });
-                    
-                    observer.unobserve(entry.target);
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Matrion - End-to-End Enterprise Transformation</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "stroke-subtle": "rgba(255, 255, 255, 0.1)",
+                                                "tertiary-fixed-dim": "#eac324",
+                                                "primary-container": "#00f0ff",
+                                                "secondary-container": "#ff5e07",
+                                                "on-secondary-container": "#531900",
+                                                "on-secondary-fixed": "#370e00",
+                                                "secondary-fixed-dim": "#ffb59a",
+                                                "surface-container": "#201f21",
+                                                "surface-bright": "#39393b",
+                                                "on-background": "#e5e1e4",
+                                                "surface": "#131315",
+                                                "surface-container-highest": "#353437",
+                                                "inverse-on-surface": "#313032",
+                                                "surface-container-low": "#1c1b1d",
+                                                "on-tertiary": "#3b2f00",
+                                                "primary-fixed": "#7df4ff",
+                                                "on-primary-fixed": "#002022",
+                                                "on-secondary-fixed-variant": "#802a00",
+                                                "secondary-fixed": "#ffdbce",
+                                                "on-primary-fixed-variant": "#004f54",
+                                                "on-tertiary-container": "#715d00",
+                                                "surface-container-lowest": "#0e0e10",
+                                                "outline": "#849495",
+                                                "on-error-container": "#ffdad6",
+                                                "inverse-primary": "#006970",
+                                                "primary": "#dbfcff",
+                                                "outline-variant": "#3b494b",
+                                                "background": "#131315",
+                                                "error": "#ffb4ab",
+                                                "error-container": "#93000a",
+                                                "primary-fixed-dim": "#00dbe9",
+                                                "on-tertiary-fixed-variant": "#554500",
+                                                "on-secondary": "#5a1b00",
+                                                "inverse-surface": "#e5e1e4",
+                                                "surface-tint": "#00dbe9",
+                                                "secondary": "#ffb59a",
+                                                "on-primary": "#00363a",
+                                                "ink-bone": "#FCFAF6",
+                                                "on-surface-variant": "#b9cacb",
+                                                "tertiary": "#fff5de",
+                                                "on-error": "#690005",
+                                                "surface-charcoal": "#121214",
+                                                "surface-container-high": "#2a2a2c",
+                                                "tertiary-fixed": "#ffe179",
+                                                "on-primary-container": "#006970",
+                                                "surface-glass": "rgba(255, 255, 255, 0.03)",
+                                                "surface-dim": "#131315",
+                                                "on-surface": "#e5e1e4",
+                                                "on-tertiary-fixed": "#231b00",
+                                                "tertiary-container": "#fed639",
+                                                "surface-variant": "#353437"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "margin-mobile": "20px",
+                                                "unit": "8px",
+                                                "gutter": "24px",
+                                                "container-max": "1440px",
+                                                "margin-desktop": "64px"
+                                        },
+                                        "fontFamily": {
+                                                "display-xl": [
+                                                        "Playfair Display"
+                                                ],
+                                                "headline-md": [
+                                                        "Playfair Display"
+                                                ],
+                                                "headline-lg": [
+                                                        "Playfair Display"
+                                                ],
+                                                "body-md": [
+                                                        "Geist"
+                                                ],
+                                                "label-mono": [
+                                                        "JetBrains Mono"
+                                                ],
+                                                "display-xl-mobile": [
+                                                        "Playfair Display"
+                                                ],
+                                                "body-lg": [
+                                                        "Geist"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "display-xl": [
+                                                        "72px",
+                                                        {
+                                                                "lineHeight": "84px",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "32px",
+                                                        {
+                                                                "lineHeight": "40px",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "headline-lg": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "48px",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "24px",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "label-mono": [
+                                                        "12px",
+                                                        {
+                                                                "lineHeight": "16px",
+                                                                "letterSpacing": "0.05em",
+                                                                "fontWeight": "500"
+                                                        }
+                                                ],
+                                                "display-xl-mobile": [
+                                                        "44px",
+                                                        {
+                                                                "lineHeight": "52px",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "28px",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
                 }
-            });
-        }, { threshold: 0.1 });
+        </script>
+        <style>
+                /* Glassmorphism utility */
+                .glass-panel {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        backdrop-filter: blur(20px);
+                        -webkit-backdrop-filter: blur(20px);
+                }
 
-        document.querySelectorAll('.metric-card').forEach((card, index) => {
-            card.style.transitionDelay = `${index * 150}ms`;
-            observer.observe(card);
-        });
-    });
-</script>
-</body></html>
+                .glass-panel-hover:hover {
+                        box-shadow: inset 0 0 40px rgba(0, 219, 233, 0.05);
+                        border-color: rgba(0, 219, 233, 0.2);
+                        transition: all 0.3s ease;
+                }
+
+                /* Subtle mesh gradient background */
+                .mesh-bg {
+                        background-image:
+                                radial-gradient(at 0% 0%, rgba(0, 219, 233, 0.08) 0px, transparent 50%),
+                                radial-gradient(at 100% 100%, rgba(255, 94, 7, 0.05) 0px, transparent 50%);
+                        background-size: 100% 100%;
+                        background-attachment: fixed;
+                }
+        </style>
+</head>
+
+<body
+        class="bg-surface text-on-surface font-body-md mesh-bg min-h-screen selection:bg-primary-fixed-dim selection:text-on-primary-fixed antialiased">
+        <!-- TopNavBar Shared Component -->
+        <nav
+                class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-stroke-subtle">
+                <div
+                        class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit-2 max-w-container-max mx-auto h-[72px]">
+                        <a class="flex items-center hover:scale-95 duration-200" href="#">
+                                <img src="assets/logo-true-transparent.png" alt="Matrion"
+                                        class="h-12 w-auto rounded-sm" />
+                        </a>
+                        <div class="hidden md:flex items-center gap-8">
+                                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                                        href="#services">Services</a>
+                                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                                        href="#outcomes">Outcomes</a>
+                                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                                        href="#team">Team</a>
+                        </div>
+                        <a class="hidden md:inline-flex bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-6 py-2 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300"
+                                href="#contact">
+                                Talk to us
+                        </a>
+                </div>
+        </nav>
+        <main class="pt-[72px]">
+                <!-- Hero Section -->
+                <section
+                        class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-16 pb-16 flex flex-col md:flex-row md:items-stretch items-center gap-16">
+                        <div class="w-full md:w-5/12 flex flex-col items-start gap-8">
+                                <div class="flex items-center gap-3">
+                                        <span
+                                                class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping absolute"></span>
+                                        <span class="w-2 h-2 rounded-full bg-primary-fixed-dim relative"></span>
+                                        <span
+                                                class="font-label-mono text-label-mono text-primary-fixed-dim uppercase tracking-widest">Matrion
+                                                — AI Systems Engineering &amp; Managed Services</span>
+                                </div>
+                                <h1
+                                        class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-display-xl text-on-surface">
+                                        End-to-End Enterprise <br />
+                                        <span class="italic text-primary-fixed-dim font-light">Transformation</span>
+                                </h1>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                                        The Matrion team consists of diverse professionals with over two decades of
+                                        experience in top tech companies like Google, Microsoft, and Amazon, featuring
+                                        SMEs with extensive expertise in Retail, BFSI, Logistics, and Automobile.
+                                        <br /><br />
+                                        We bring AI strategy and deep systems engineering under one roof — helping
+                                        enterprises solve their hardest operational and technology problems.
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+                                        <a class="inline-flex justify-center items-center gap-2 bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-8 py-4 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300 w-full sm:w-auto"
+                                                href="#contact">
+                                                Start a conversation
+                                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                        </a>
+                                        <a class="inline-flex justify-center items-center bg-surface-glass border border-stroke-subtle text-on-surface font-body-md px-8 py-4 rounded-DEFAULT hover:border-primary-fixed-dim/50 hover:bg-primary-fixed-dim/5 transition-all duration-300 w-full sm:w-auto"
+                                                href="#services">
+                                                Explore services
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="w-full md:w-7/12 relative hidden md:flex items-center justify-center">
+                                <img src="hero-main.jpg" alt="Matrion Enterprise AI"
+                                        class="w-full h-full rounded-xl shadow-2xl border border-stroke-subtle object-cover object-top"
+                                        style="max-height: 720px;" />
+                        </div>
+                </section>
+                <!-- Services Section -->
+                <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 border-t border-stroke-subtle"
+                        id="services">
+                        <div class="mb-16 w-full">
+                                <span
+                                        class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">01
+                                        / Our Services &amp; Expertise</span>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">End-to-end
+                                        capabilities across the technology stack</h2>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant">From executive AI strategy
+                                        and legacy system modernization to operational automation and 24/7 managed
+                                        infrastructure, we bring comprehensive engineering excellence under one roof.
+                                </p>
+                        </div>
+                        <!-- Bento Grid for Capabilities -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Card 1 -->
+                                <div
+                                        class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
+                                        <div>
+                                                <div class="flex justify-between items-start mb-8">
+                                                        <span
+                                                                class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The
+                                                                Innovation &amp; Control Layer</span>
+                                                        <span
+                                                                class="font-label-mono text-label-mono text-primary-fixed-dim">01</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-on-surface mb-4">AI
+                                                        Strategy, Integration &amp; Governance</h3>
+                                                <p class="text-on-surface-variant mb-0">We identify high-value AI use
+                                                        cases and integrate intelligent agents into core workflows. We
+                                                        ensure strict AI Ops and governance—monitoring performance and
+                                                        preventing data leakage to keep your AI safe at scale.</p>
+                                        </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div
+                                        class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
+                                        <div>
+                                                <div class="flex justify-between items-start mb-8">
+                                                        <span
+                                                                class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The
+                                                                Architecture Layer</span>
+                                                        <span
+                                                                class="font-label-mono text-label-mono text-primary-fixed-dim">02</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Core
+                                                        System Modernization</h3>
+                                                <p class="text-on-surface-variant mb-0">We overhaul complex legacy
+                                                        infrastructure and modernize aging applications. We build
+                                                        resilient, scalable platforms ready to support modern business
+                                                        demands.</p>
+                                        </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div
+                                        class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
+                                        <div>
+                                                <div class="flex justify-between items-start mb-8">
+                                                        <span
+                                                                class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The
+                                                                Efficiency Layer</span>
+                                                        <span
+                                                                class="font-label-mono text-label-mono text-primary-fixed-dim">03</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-on-surface mb-4">
+                                                        Operational Automation &amp; Integration</h3>
+                                                <p class="text-on-surface-variant mb-0">We engineer highly efficient workflows and API integrations that replace tedious manual tasks. By intelligently connecting your disparate systems, we dramatically accelerate your operational speed.</p>
+                                        </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div
+                                        class="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between h-full group">
+                                        <div>
+                                                <div class="flex justify-between items-start mb-8">
+                                                        <span
+                                                                class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The
+                                                                Reliability Layer</span>
+                                                        <span
+                                                                class="font-label-mono text-label-mono text-primary-fixed-dim">04</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-on-surface mb-4">
+                                                        Managed IT Services</h3>
+                                                <p class="text-on-surface-variant mb-0">We provide end-to-end system
+                                                        administration, proactive maintenance, and security monitoring.
+                                                        We offer dedicated ownership to keep your critical
+                                                        infrastructure running flawlessly.</p>
+                                        </div>
+                                </div>
+                                <!-- Full Width Card 5 -->
+                                <div
+                                        class="md:col-span-2 glass-panel glass-panel-hover rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center justify-between group bg-gradient-to-r from-surface-glass to-primary-fixed-dim/5">
+                                        <div class="w-full md:w-2/3">
+                                                <div class="flex justify-between items-start mb-8">
+                                                        <span
+                                                                class="font-label-mono text-label-mono px-3 py-1 border border-stroke-subtle rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant">The
+                                                                Embedded Delivery Layer</span>
+                                                        <span
+                                                                class="font-label-mono text-label-mono text-primary-fixed-dim md:hidden">05</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-on-surface mb-4">
+                                                        Forward Deployed AI Engineers</h3>
+                                                <p class="text-on-surface-variant mb-6">We embed senior AI engineers
+                                                        directly into your company. They work inside your team rituals
+                                                        to ship production code and evaluation suites that your
+                                                        engineers own from day one.</p>
+                                                <a class="inline-flex items-center gap-2 bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-6 py-2 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300"
+                                                        href="#">
+                                                        Embed an engineer
+                                                </a>
+                                        </div>
+                                        <div class="w-full md:w-1/3 flex justify-end">
+                                                <div
+                                                        class="w-full max-w-xs aspect-square border border-stroke-subtle rounded-lg bg-surface-container-lowest p-4 font-label-mono text-xs text-on-surface-variant flex flex-col">
+                                                        <div class="flex gap-2 mb-4">
+                                                                <span class="w-2 h-2 rounded-full bg-error"></span>
+                                                                <span
+                                                                        class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                                                                <span
+                                                                        class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+                                                        </div>
+                                                        <div class="flex-grow space-y-2 opacity-80">
+                                                                <p><span class="text-primary-fixed-dim">$</span> git
+                                                                        clone enterprise/ai.git</p>
+                                                                <p class="text-on-surface">✔ Senior AI Engineer
+                                                                        onboarded</p>
+                                                                <p class="text-on-surface">✔ Shipping production code...
+                                                                </p>
+                                                                <p class="mt-4 text-primary-fixed-dim">EVALUATION SUITE
+                                                                        · LIVE IN PROD</p>
+                                                                <p class="font-bold text-on-surface">100% Team Handover
+                                                                        &amp; Ownership</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="mt-12 glass-panel rounded-xl p-6 text-center border-dashed">
+                                <p class="text-on-surface-variant">Want your website optimised for GEO — so AI
+                                        assistants find, understand and cite you? <a
+                                                class="text-primary-fixed-dim underline underline-offset-4 decoration-primary-fixed-dim/30 hover:decoration-primary-fixed-dim transition-colors"
+                                                href="#">Talk to us about a GEO audit.</a></p>
+                        </div>
+                </section>
+                <!-- Outcomes Section -->
+                <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 border-t border-stroke-subtle relative overflow-hidden"
+                        id="outcomes">
+                        <!-- Subtle background blob -->
+                        <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-fixed-dim/5 rounded-full blur-3xl -z-10">
+                        </div>
+                        <div class="mb-16 w-full">
+                                <span
+                                        class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">02
+                                        / Outcomes</span>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">AI that shows up in
+                                        the numbers</h2>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">We build agentic
+                                        systems to move business metrics — revenue, cycle time, cost to serve — and to
+                                        put real AI capability inside the product your customers already pay for.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Stat 1 -->
+                                <div
+                                        class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
+                                        <div
+                                                class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                                <span
+                                                        class="material-symbols-outlined text-8xl text-primary-fixed-dim">trending_up</span>
+                                        </div>
+                                        <div
+                                                class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6">
+                                                <span class="counter" data-target="3">0</span>x</div>
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Acceleration
+                                                &amp; Velocity</span>
+                                        <h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">Faster
+                                                Time-to-Value</h4>
+                                        <p class="text-on-surface-variant">From quarters to weeks. By deploying a
+                                                narrow, high-leverage agentic slice to production early, your business
+                                                begins compounding returns while the wider system roadmap is still
+                                                expanding.</p>
+                                </div>
+                                <!-- Stat 2 -->
+                                <div
+                                        class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
+                                        <div
+                                                class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                                <span
+                                                        class="material-symbols-outlined text-8xl text-primary-fixed-dim">bar_chart</span>
+                                        </div>
+                                        <div
+                                                class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6">
+                                                +<span class="counter" data-target="40">0</span>%</div>
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Operational
+                                                Leverage</span>
+                                        <h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">
+                                                Engineering Throughput</h4>
+                                        <p class="text-on-surface-variant">Autonomous agents absorb repetitive,
+                                                high-volume operational loads — research, triage, reconciliation, and
+                                                first-pass drafting — freeing your talent to focus entirely on
+                                                high-judgment decisions.</p>
+                                </div>
+                                <!-- Stat 3 -->
+                                <div
+                                        class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
+                                        <div
+                                                class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                                <span
+                                                        class="material-symbols-outlined text-8xl text-primary-fixed-dim">trending_down</span>
+                                        </div>
+                                        <div
+                                                class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6 flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-6xl">arrow_downward</span>
+                                                <span class="counter" data-target="60">0</span>%
+                                        </div>
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Unit
+                                                Economics</span>
+                                        <h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">Falling
+                                                Costs at Scale</h4>
+                                        <p class="text-on-surface-variant">Through intelligent model routing, prompt
+                                                caching, and small-model substitution, your cost per outcome decreases
+                                                as volume rises — preventing inference bills from outpacing revenue
+                                                growth.</p>
+                                </div>
+                                <!-- Stat 4 -->
+                                <div
+                                        class="glass-panel p-10 rounded-xl relative overflow-hidden group metric-card opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 transition-all duration-700 ease-out">
+                                        <div
+                                                class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                                <span
+                                                        class="material-symbols-outlined text-8xl text-primary-fixed-dim">verified_user</span>
+                                        </div>
+                                        <div
+                                                class="font-display-xl text-[80px] leading-none font-bold text-primary-fixed-dim mb-6">
+                                                <span class="counter" data-target="100">0</span>%</div>
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-2">Enterprise
+                                                Governance</span>
+                                        <h4 class="font-headline-md text-xl font-medium text-on-surface mb-4">
+                                                Audit-Ready Compliance</h4>
+                                        <p class="text-on-surface-variant">Traceable decision logs, automated PII
+                                                guardrails, and human oversight built from the first commit — satisfying
+                                                DPDP, EU AI Act, and ISO/IEC 42001 as a natural by-product of delivery.
+                                        </p>
+                                </div>
+                        </div>
+                </section>
+                <!-- About Us / Team Section -->
+                <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 border-t border-stroke-subtle"
+                        id="team">
+                        <div class="mb-16 w-full">
+                                <span
+                                        class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">03
+                                        / About Us</span>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Agentic AI experts
+                                        who have already built at scale</h2>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">We combine
+                                        agentic system engineering, deep AI expertise and embedded delivery. Our mission
+                                        is to turn AI agents into dependable operating systems for real business work.
+                                </p>
+                        </div>
+                        <div class="flex flex-col border-t border-stroke-subtle">
+                                <!-- Team Member Row -->
+                                <div
+                                        class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
+                                        <div
+                                                class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">
+                                                01</div>
+                                        <div
+                                                class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">
+                                                Google India Engineering Leader</div>
+                                        <div class="w-full md:w-6/12 text-on-surface-variant">Google Gemini Enterprise
+                                        </div>
+                                </div>
+                                <!-- Team Member Row -->
+                                <div
+                                        class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
+                                        <div
+                                                class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">
+                                                02</div>
+                                        <div
+                                                class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">
+                                                Director / General Manager</div>
+                                        <div class="w-full md:w-6/12 text-on-surface-variant">Amazon Visual Shopping
+                                        </div>
+                                </div>
+                                <!-- Team Member Row -->
+                                <div
+                                        class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
+                                        <div
+                                                class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">
+                                                03</div>
+                                        <div
+                                                class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">
+                                                Vice-President, ML &amp; Analytics</div>
+                                        <div class="w-full md:w-6/12 text-on-surface-variant">Sears</div>
+                                </div>
+                                <!-- Team Member Row -->
+                                <div
+                                        class="flex flex-col md:flex-row py-8 border-b border-stroke-subtle hover:bg-surface-glass transition-colors">
+                                        <div
+                                                class="w-full md:w-1/12 font-label-mono text-on-surface-variant mb-2 md:mb-0">
+                                                04</div>
+                                        <div
+                                                class="w-full md:w-5/12 font-headline-md text-2xl text-on-surface mb-2 md:mb-0">
+                                                Chief Technology Officer</div>
+                                        <div class="w-full md:w-6/12 text-on-surface-variant">Security startup acquired
+                                                by McAfee</div>
+                                </div>
+                        </div>
+                </section>
+                <!-- Next Step / Contact CTA -->
+                <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-16 pb-32 border-t border-stroke-subtle mb-32"
+                        id="contact">
+                        <div
+                                class="glass-panel rounded-2xl p-8 md:p-16 relative overflow-hidden bg-gradient-to-br from-surface-glass to-primary-fixed-dim/5 border border-primary-fixed-dim/20 shadow-[0_0_50px_rgba(0,219,233,0.05)]">
+                                <div class="relative z-10">
+                                        <span
+                                                class="font-label-mono text-label-mono text-primary-fixed-dim uppercase tracking-widest block mb-4">04
+                                                / Next Step</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 w-full">A
+                                                30-minute call to identify where an agentic system can create real
+                                                leverage — and a straight answer on whether the workflow is ready for
+                                                it.</h2>
+                                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">If
+                                                it is, we can have an engineer embedded within weeks.</p>
+                                        <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                                                <a class="inline-flex justify-center items-center gap-2 bg-primary-fixed-dim text-on-primary-fixed font-body-md font-medium px-8 py-4 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(0,219,233,0.5)] transition-all duration-300 w-full sm:w-auto"
+                                                        href="mailto:info@matrion.in">
+                                                        Email us <span
+                                                                class="material-symbols-outlined text-sm">arrow_forward</span>
+                                                </a>
+                                                <div class="flex items-center gap-3 text-on-surface-variant">
+                                                        <span
+                                                                class="material-symbols-outlined text-primary-fixed-dim">call</span>
+                                                        <a class="hover:text-primary-fixed-dim transition-colors"
+                                                                href="tel:+919845576009">+91 98455 76009</a>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        </div>
+                </section>
+        </main>
+        <!-- Footer Shared Component -->
+        <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-stroke-subtle">
+                <div
+                        class="grid grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop pt-16 pb-32 max-w-container-max mx-auto">
+                        <div class="col-span-12 md:col-span-4 flex flex-col justify-between mb-12 md:mb-0">
+                                <a class="flex items-center hover:opacity-80 transition-opacity mb-8 block w-fit"
+                                        href="#">
+                                        <img src="assets/logo-true-transparent.png" alt="Matrion"
+                                                class="h-12 w-auto rounded-sm" />
+                                </a>
+                                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                                        © 2024 Matrion. Sophisticated Precision in AI Systems Engineering.
+                                </p>
+                        </div>
+                        <div class="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                                <div class="flex flex-col gap-4">
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Email</span>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="mailto:info@matrion.in">info@matrion.in</a>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Phone</span>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="tel:+919845576009">+91 98455 76009</a>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Links</span>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="#services">Services</a>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="#outcomes">Outcomes</a>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="#team">Team</a>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                        <span
+                                                class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-2">Legal</span>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="#">Privacy Policy</a>
+                                        <a class="text-on-surface-variant hover:text-primary transition-all"
+                                                href="#">Terms of Service</a>
+                                </div>
+                        </div>
+                </div>
+        </footer>
+        <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                        const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                        if (isReducedMotion) {
+                                document.querySelectorAll('.counter').forEach(el => {
+                                        el.innerText = el.getAttribute('data-target');
+                                });
+                                return;
+                        }
+
+                        const observer = new IntersectionObserver((entries) => {
+                                entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                                entry.target.classList.remove('opacity-0', 'translate-y-8');
+                                                entry.target.classList.add('opacity-100', 'translate-y-0');
+
+                                                const counters = entry.target.querySelectorAll('.counter');
+                                                counters.forEach(counter => {
+                                                        if (!counter.classList.contains('counted')) {
+                                                                counter.classList.add('counted');
+                                                                const target = +counter.getAttribute('data-target');
+                                                                let count = 0;
+                                                                const duration = 2000;
+                                                                const frameDuration = 1000 / 60;
+                                                                const totalFrames = Math.round(duration / frameDuration);
+                                                                const increment = target / totalFrames;
+
+                                                                const updateCount = () => {
+                                                                        count += increment;
+                                                                        if (count < target) {
+                                                                                counter.innerText = Math.ceil(count);
+                                                                                requestAnimationFrame(updateCount);
+                                                                        } else {
+                                                                                counter.innerText = target;
+                                                                        }
+                                                                };
+                                                                updateCount();
+                                                        }
+                                                });
+
+                                                observer.unobserve(entry.target);
+                                        }
+                                });
+                        }, { threshold: 0.1 });
+
+                        document.querySelectorAll('.metric-card').forEach((card, index) => {
+                                card.style.transitionDelay = `${index * 150}ms`;
+                                observer.observe(card);
+                        });
+                });
+        </script>
+</body>
+
+</html>
